@@ -20,6 +20,6 @@ so I want to use flake plugin mechanism help us check.
 
 ## flake8 codes
 
-| Code   | Description                                            |
-|--------|--------------------------------------------------------|
-| PWE101 | `select()` inner comparison expression are not allowed |
+| Code   | Description                                                          |
+|--------|----------------------------------------------------------------------|
+| PWE101 | `select()` or `delete()` inner comparison expression are not allowed |
