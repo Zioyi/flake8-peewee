@@ -12,16 +12,14 @@ if sys.version_info < (3, 8):
 else:
     import importlib.metadata as importlib_metadata
 
-PWE101 = "PWE101 select() inner comparison expression are not allowed"
+PWE101 = "PWE101 select() or delete() inner comparison expression are not allowed"
 
 
 def _get_pwe101(node: ast.Call):
-    """
-    """
     errors: List[Tuple[int, int, str]] = []
     if (
             isinstance(node.func, ast.Attribute) and
-            node.func.attr == "select" and
+            node.func.attr in ("select", "delete") and
             len(node.args) > 0 and
             isinstance((node.args[0]), ast.Compare)
 
